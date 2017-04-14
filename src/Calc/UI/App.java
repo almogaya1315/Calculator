@@ -16,21 +16,14 @@ public class App {
         frame.setVisible(true);
     }
 
-    private JButton btnTest;
     private JPanel panelMain;
-    private JTextField textField1;
-    private JTextField textField2;
-
-    public App() {
-        btnTest.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-                if (textField1.getText() != ""){
-                    String text = textField1.getText();
-                    textField2.setText(text);
-                }
-            }
-        });
-    }
+    private JTextField MainTextField;
+    private JButton button1;
+    private JButton button2;
+    private JButton button3;
+    private JButton button4;
+    private JButton button5;
+    private JButton button6;
+    private JButton button7;
+    private JButton button8;
 }
