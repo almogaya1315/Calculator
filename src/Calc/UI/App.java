@@ -8,14 +8,6 @@ import java.awt.event.MouseEvent;
  * Created by matsll on 4/13/2017.
  */
 public class App {
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("App");
-        frame.setContentPane(new App().panelMain);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-    }
-
     private JPanel panelMain;
     private JTextField MainTextField;
     private JButton button1;
@@ -26,4 +18,12 @@ public class App {
     private JButton button6;
     private JButton button7;
     private JButton button8;
+    private JButton button9;
+    private JButton button10;
+    private JButton button11;
+    private JButton button12;
+    private JButton button13;
+    private JButton button14;
+    private JButton button15;
+    private JButton button16;
 }
