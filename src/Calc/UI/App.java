@@ -81,38 +81,15 @@ public class App extends JPanel {
         builder.nextLine();
 
         add(builder.getPanel());
-
-        /*DefaultFormBuilder builder = new DefaultFormBuilder(new FormLayout(""));
-        builder.setBorder(BorderFactory.createEmptyBorder(3,3,3,3));
-        builder.appendColumn("fill:d:noGrow");
-        builder.appendColumn("left:4dlu:noGrow");
-        builder.appendColumn("fill:d:noGrow");
-        builder.appendColumn("left:4dlu:noGrow");
-        builder.appendColumn("fill:d:noGrow");
-        builder.appendColumn("left:4dlu:noGrow");
-        builder.appendColumn("fill:d:noGrow");
-
-        builder.append(new JTextField());
-        builder.nextLine();
-
-        builder.append(new JButton());
-        builder.append(new JButton());
-        builder.append(new JButton());
-        builder.append(new JButton());
-        builder.nextLine();
-
-        builder.append(new JButton());
-        builder.append(new JButton());
-        builder.append(new JButton());
-        builder.append(new JButton());
-        builder.nextLine();
-
-        builder.append(new JButton());
-        builder.append(new JButton());
-        builder.append(new JButton());
-        builder.append(new JButton());
-        builder.nextLine();*/
     }
 
     private JPanel panelMain;
+
+    private JComponent BuildColumnSpan(){
+        FormLayout layout = new FormLayout(
+                
+        );
+
+        return null;
+    }
 }
