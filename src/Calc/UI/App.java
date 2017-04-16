@@ -1,6 +1,7 @@
 package Calc.UI;
 
 import com.jgoodies.forms.builder.DefaultFormBuilder;
+import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 
 import javax.swing.*;
@@ -17,10 +18,13 @@ public class App extends JPanel {
         frame.add(new App());
         frame.pack();
         frame.setVisible(true);
+        frame.setResizable(false);
     }
 
     public App(){
         super(new BorderLayout());
+
+        CellConstraints cc = new CellConstraints();
 
         DefaultFormBuilder builder = new DefaultFormBuilder(new FormLayout(""));
         builder.setBorder(BorderFactory.createEmptyBorder(3,3,3,3));
@@ -31,8 +35,13 @@ public class App extends JPanel {
         builder.appendColumn("fill:max(pref; 75px)");
         builder.appendColumn("2dlu");
         builder.appendColumn("fill:max(pref; 75px)");
+        //builder.appendRow("17dlu");
+
 
         builder.append(new JTextField());
+        builder.nextLine();
+
+        builder.appendSeparator();
         builder.nextLine();
 
         builder.append(new JButton("7"));
