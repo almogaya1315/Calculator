@@ -98,7 +98,7 @@ public class App extends JPanel {
 
     private JComponent BuildColumnSpan(){
         FormLayout layout = new FormLayout(
-                "fill:max(pref; 75px), 2dlu, fill:max(pref; 75px), 2dlu, fill:max(pref; 75px), 2dlu"
+                "right:pref, 6dlu, 50dlu, 4dlu, default", "pref, 3dlu, pref, 3dlu, pref" //"fill:max(pref; 75px), 2dlu, fill:max(pref; 75px), 2dlu, fill:max(pref; 75px), 2dlu"
         );
 
         JPanel panel = new JPanel(layout);
