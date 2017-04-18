@@ -16,7 +16,7 @@ public class App extends JPanel {
 
         JFrame frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        JComponent panel = new App().BuildPanel();
+        JComponent panel = new App().BuildColumnSpan();
         frame.getContentPane().add(panel);
         //frame.add(new App());
         frame.pack();
@@ -92,38 +92,38 @@ public class App extends JPanel {
         JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.putClientProperty("jgoodies.noContentBorder", true);
 
-        tabbedPane.add("column span", BuildColumnSpan());
+        tabbedPane.add("Calc",BuildColumnSpan());
         return tabbedPane;
     }
 
     private JComponent BuildColumnSpan(){
         FormLayout layout = new FormLayout(
-                "right:pref, 2dlu, pref, 2dlu, pref, default", "pref, 3dlu, pref, 3dlu, pref, 3dlu, pref, 3dlu, pref" //"fill:max(pref; 75px), 2dlu, fill:max(pref; 75px), 2dlu, fill:max(pref; 75px), 2dlu"
+                "right:pref, 2dlu, pref, 2dlu, pref, 2dlu, default", "30dlu, 15dlu, 15dlu, 15dlu, 15dlu" //"fill:max(pref; 75px), 2dlu, fill:max(pref; 75px), 2dlu, fill:max(pref; 75px), 2dlu"
         );
 
         JPanel panel = new JPanel(layout);
-        panel.setBorder(Borders.DIALOG_BORDER);
+        panel.setBorder(Borders.DLU2_BORDER);
         CellConstraints cc = new CellConstraints();
         panel.add(new JTextField(), cc.xyw(1, 1, 7));
-        panel.add(new JButton(), cc.xy(1, 2));
-        panel.add(new JButton(), cc.xy(3, 2));
-        panel.add(new JButton(), cc.xy(5, 2));
-        panel.add(new JButton(), cc.xy(7, 2));
+        panel.add(new JButton("7"), cc.xy(1, 2));
+        panel.add(new JButton("8"), cc.xy(3, 2));
+        panel.add(new JButton("9"), cc.xy(5, 2));
+        panel.add(new JButton("+"), cc.xy(7, 2));
 
-        panel.add(new JButton(), cc.xy(1, 3));
-        panel.add(new JButton(), cc.xy(3, 3));
-        panel.add(new JButton(), cc.xy(5, 3));
-        panel.add(new JButton(), cc.xy(7, 3));
+        panel.add(new JButton("4"), cc.xy(1, 3));
+        panel.add(new JButton("5"), cc.xy(3, 3));
+        panel.add(new JButton("6"), cc.xy(5, 3));
+        panel.add(new JButton("-"), cc.xy(7, 3));
 
-        panel.add(new JButton(), cc.xy(1, 4));
-        panel.add(new JButton(), cc.xy(3, 4));
-        panel.add(new JButton(), cc.xy(5, 4));
-        panel.add(new JButton(), cc.xy(7, 4));
+        panel.add(new JButton("1"), cc.xy(1, 4));
+        panel.add(new JButton("2"), cc.xy(3, 4));
+        panel.add(new JButton("3"), cc.xy(5, 4));
+        panel.add(new JButton("*"), cc.xy(7, 4));
 
-        panel.add(new JButton(), cc.xy(1, 5));
-        panel.add(new JButton(), cc.xy(3, 5));
-        panel.add(new JButton(), cc.xy(5, 5));
-        panel.add(new JButton(), cc.xy(7, 5));
+        panel.add(new JButton("0"), cc.xy(1, 5));
+        panel.add(new JButton("."), cc.xy(3, 5));
+        panel.add(new JButton("="), cc.xy(5, 5));
+        panel.add(new JButton("/"), cc.xy(7, 5));
 
         return panel;
     }
