@@ -1,5 +1,6 @@
 package Calc.UI;
 
+import Calc.Common.ComponentBuilder;
 import com.jgoodies.forms.builder.DefaultFormBuilder;
 import com.jgoodies.forms.factories.Borders;
 import com.jgoodies.forms.layout.CellConstraints;
@@ -16,14 +17,19 @@ public class App extends JPanel {
 
         JFrame frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        JComponent panel = new App().BuildColumnSpan();
+
+        ComponentBuilder builder = new ComponentBuilder();
+        JComponent panel = builder.BuildCalcComponent();
+
         frame.getContentPane().add(panel);
         frame.pack();
         frame.setVisible(true);
         frame.setResizable(false);
     }
 
-    private JComponent BuildColumnSpan(){
+    JPanel panelMain;
+
+    private JComponent BuildCalcComponent(){
         FormLayout layout = new FormLayout(
                 "50dlu, 2dlu, 50dlu, 2dlu, 50dlu, 2dlu, 50dlu",
                 "50dlu, 30dlu, 30dlu, 30dlu, 30dlu, 30dlu"
@@ -45,36 +51,100 @@ public class App extends JPanel {
         btn_C.setText("C");
         panel.add(btn_C, cell.xy(1, 2));
 
-        JButton btn_D = new JButton();
-        btn_D.setPreferredSize(dimension);
-        btn_D.setText("Del");
-        panel.add(btn_D, cell.xy(3, 2));
+        JButton btn_DEL = new JButton();
+        btn_DEL.setPreferredSize(dimension);
+        btn_DEL.setText("Del");
+        panel.add(btn_DEL, cell.xy(3, 2));
 
-        panel.add(new JButton("+/-"), cell.xy(5, 2));
-        panel.add(new JButton("%"), cell.xy(7, 2));
+        JButton btn_PM = new JButton();
+        btn_PM.setPreferredSize(dimension);
+        btn_PM.setText("+/-");
+        panel.add(btn_PM, cell.xy(5, 2));
+
+        JButton btn_PER = new JButton();
+        btn_PER.setPreferredSize(dimension);
+        btn_PER.setText("%");
+        panel.add(btn_PER, cell.xy(7, 2));
 
         JButton btn_7 = new JButton();
         btn_7.setPreferredSize(dimension);
         btn_7.setText("7");
         panel.add(btn_7, cell.xy(1, 3));
-        panel.add(new JButton("8"), cell.xy(3, 3));
-        panel.add(new JButton("9"), cell.xy(5, 3));
-        panel.add(new JButton("+"), cell.xy(7, 3));
 
-        panel.add(new JButton("4"), cell.xy(1, 4));
-        panel.add(new JButton("5"), cell.xy(3, 4));
-        panel.add(new JButton("6"), cell.xy(5, 4));
-        panel.add(new JButton("-"), cell.xy(7, 4));
+        JButton btn_8 = new JButton();
+        btn_8.setPreferredSize(dimension);
+        btn_8.setText("8");
+        panel.add(btn_8, cell.xy(3, 3));
 
-        panel.add(new JButton("1"), cell.xy(1, 5));
-        panel.add(new JButton("2"), cell.xy(3, 5));
-        panel.add(new JButton("3"), cell.xy(5, 5));
-        panel.add(new JButton("*"), cell.xy(7, 5));
+        JButton btn_9 = new JButton();
+        btn_9.setPreferredSize(dimension);
+        btn_9.setText("9");
+        panel.add(btn_9, cell.xy(5, 3));
 
-        panel.add(new JButton("0"), cell.xy(1, 6));
-        panel.add(new JButton("."), cell.xy(3, 6));
-        panel.add(new JButton("="), cell.xy(5, 6));
-        panel.add(new JButton("/"), cell.xy(7, 6));
+        JButton btn_PL = new JButton();
+        btn_PL.setPreferredSize(dimension);
+        btn_PL.setText("+");
+        panel.add(btn_PL, cell.xy(7, 3));
+
+        JButton btn_4 = new JButton();
+        btn_4.setPreferredSize(dimension);
+        btn_4.setText("4");
+        panel.add(btn_4, cell.xy(1, 4));
+
+        JButton btn_5 = new JButton();
+        btn_5.setPreferredSize(dimension);
+        btn_5.setText("5");
+        panel.add(btn_5, cell.xy(3, 4));
+
+        JButton btn_6 = new JButton();
+        btn_6.setPreferredSize(dimension);
+        btn_6.setText("6");
+        panel.add(btn_6, cell.xy(5, 4));
+
+        JButton btn_MN = new JButton();
+        btn_MN.setPreferredSize(dimension);
+        btn_MN.setText("-");
+        panel.add(btn_MN, cell.xy(7, 4));
+
+        JButton btn_1 = new JButton();
+        btn_1.setPreferredSize(dimension);
+        btn_1.setText("1");
+        panel.add(btn_1, cell.xy(1, 5));
+
+        JButton btn_2 = new JButton();
+        btn_2.setPreferredSize(dimension);
+        btn_2.setText("2");
+        panel.add(btn_2, cell.xy(3, 5));
+
+        JButton btn_3 = new JButton();
+        btn_3.setPreferredSize(dimension);
+        btn_3.setText("3");
+        panel.add(btn_3, cell.xy(5, 5));
+
+        JButton btn_MP = new JButton();
+        btn_MP.setPreferredSize(dimension);
+        btn_MP.setText("*");
+        panel.add(btn_MP, cell.xy(7, 5));
+
+        JButton btn_0 = new JButton();
+        btn_0.setPreferredSize(dimension);
+        btn_0.setText("0");
+        panel.add(btn_0, cell.xy(1, 6));
+
+        JButton btn_DOT = new JButton();
+        btn_DOT.setPreferredSize(dimension);
+        btn_DOT.setText(".");
+        panel.add(btn_DOT, cell.xy(3, 6));
+
+        JButton btn_EQ = new JButton();
+        btn_EQ.setPreferredSize(dimension);
+        btn_EQ.setText("=");
+        panel.add(btn_EQ, cell.xy(5, 6));
+
+        JButton btn_DV = new JButton();
+        btn_DV.setPreferredSize(dimension);
+        btn_DV.setText("/");
+        panel.add(btn_DV, cell.xy(7, 6));
 
         return panel;
     }
