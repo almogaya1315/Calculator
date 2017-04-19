@@ -98,13 +98,15 @@ public class App extends JPanel {
 
     private JComponent BuildColumnSpan(){
         FormLayout layout = new FormLayout(
-                "right:pref, 2dlu, pref, 2dlu, pref, 2dlu, default", "30dlu, 15dlu, 15dlu, 15dlu, 15dlu" //"fill:max(pref; 75px), 2dlu, fill:max(pref; 75px), 2dlu, fill:max(pref; 75px), 2dlu"
+                "right:pref, 2dlu, pref, 2dlu, pref, 2dlu, default", "20dlu, 15dlu, 15dlu, 15dlu, 15dlu" //"fill:max(pref; 75px), 2dlu, fill:max(pref; 75px), 2dlu, fill:max(pref; 75px), 2dlu"
         );
 
         JPanel panel = new JPanel(layout);
         panel.setBorder(Borders.DLU2_BORDER);
         CellConstraints cc = new CellConstraints();
-        panel.add(new JTextField(), cc.xyw(1, 1, 7));
+        JTextField field = new JTextField();
+        field.setPreferredSize(new Dimension(5, 30));
+        panel.add(field, cc.xyw(1, 1, 7));
         panel.add(new JButton("7"), cc.xy(1, 2));
         panel.add(new JButton("8"), cc.xy(3, 2));
         panel.add(new JButton("9"), cc.xy(5, 2));
