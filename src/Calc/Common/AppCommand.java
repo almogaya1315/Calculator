@@ -21,8 +21,22 @@ public class AppCommand {
         } else if (action == "Del") {
             if (mainField.getText() != "") {
                 String text = mainField.getText();
-                mainField.getText().substring(0, text.length() - 1);
+                text = text.substring(0, text.length() - 1);
+                mainField.setText(text);
             }
+        } else if (action == "+/-") {
+            String text = mainField.getText();
+            if (text != "") {
+                char c = '-';
+                if (text.contains("-")){
+                    text = text.substring(1);
+                } else {
+                    String current = text;
+                    text = "-";
+                    text += current;
+                }
+            }
+            mainField.setText(text);
         }
         return true;
     }
