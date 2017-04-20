@@ -9,6 +9,8 @@ import javax.swing.*;
  */
 public class AppCommand {
     public boolean setAction(JTextField mainField, String action) {
+        if (action == ".") return false;
+
         for (char c : action.toCharArray()) {
             if (!Character.isDigit(c)) continue;
             else return false;
